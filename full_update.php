@@ -15,7 +15,7 @@ if(isset($_POST["full_update"])){
 	$dates = $_POST["dates"];
 	
 	mysqli_query($connect, "UPDATE `tbl_cv` SET `name` = '$name', `location` = '$location', `phone` = '$phone', `email` = '$email', `summary` = '$summary', `title` = '$title', `company` = '$company', `texts` = '$texts', `dates` = '$dates' WHERE `id` = '$id'") or die(mysqli_error());
-		header("location: index.php?id=$id");
+		header("location: resume.php?id=$id");
 }
 
 ?>

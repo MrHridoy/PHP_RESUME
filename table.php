@@ -1,5 +1,4 @@
 <?php  include('connect.php');?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,6 +76,10 @@
     <!--Task DataTable with Hover Section-->
     <div class="col-lg-12">
         <div class="card mb-4">
+          <form action="search.php" method="POST" class="p-3">
+            <input  type="text" name="search" class="p-1">
+            <button class="btn btn-info">Search</button>
+          </form>
             <div class="table-responsive p-3">
                 <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     <thead class="thead-light">
@@ -100,7 +103,7 @@
                                 <td><?php echo $row["phone"]; ?></td>
                                 <td><?php echo $row["email"]; ?></td>
                                 <td><?php echo $row["company"]; ?></td>
-                                <td><a href="index.php?id=<?php echo $row["id"]; ?>"><button type="button" class="btn btn-success">View</button></a>
+                                <td><a href="resume.php?id=<?php echo $row["id"]; ?>"><button type="button" class="btn btn-success">View</button></a>
                                 <a href="delete.php?id=<?php echo $row["id"]; ?>"><button type="button" class="btn btn-danger">Delete</button></a></td>
                             </tr>
                             <?php $count++; } ?>
